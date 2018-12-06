@@ -1,21 +1,22 @@
 # Channelize-Android
  This tutorial will walk you through building a simple Android app with the Channelize integration.
  
- first, you will need to register on Channelize: https://channelize.io/pricing
+ Firstly, you will need to register on Channelize: https://channelize.io/pricing
 
- after the successful payment at https://channelize.io/pricing you'll get the "channelize.aar" file that will contains the all
- messaging other feature of channelize.io.
+ After the successful payment at https://channelize.io/pricing you'll get the "**channelize.aar**" file that will contains the all messaging and other feature of channelize.io.
 
- 1. After getting the channelize.aar file download it on system.
- 2. Once get the channelize.aar file, add this file into project. For that please follow the below steps:
- In android studio Go to File-> Project Structure-> Click + Icon at top left-> Import .jar/.aar package-> Select the channelize.aar
- file.
+ 1. After getting the **channelize.aar** file download it on your system.
+ 
+ 2. Once get the **channelize.aar** file, add this file into project. For that please follow the below steps:
+ In android studio Go to File-> Project Structure-> Click + Icon at top left-> Import .jar/.aar package-> Select the
+ **channelize.aar** file.
+ 
  3. Add below code in app level build.gradle file:
-Add below code at top:
+ **Add below code at top:**
 
-apply plugin: 'com.jakewharton.butterknife'
+    apply plugin: 'com.jakewharton.butterknife'
 
-Add all below dependencies:
+**Add all below dependencies:**
 
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
@@ -96,7 +97,7 @@ Add all below dependencies:
     }
     
     
-   5. Change the below variables in config.java file:
+   5. Change the below variables in **Config.java** file:
     
     
      //This will be the default API calling url.
