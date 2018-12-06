@@ -51,9 +51,6 @@ Add all below dependencies:
             url 'https://maven.google.com/'
             name 'Google'
         }
-        maven {
-            url 'https://maven.fabric.io/public'
-        }
 
         // TODO remove after butterknife 9 graduates to stable
         maven { name 'Sonatype SNAPSHOTs'; url 'https://oss.sonatype.org/content/repositories/snapshots/' }
@@ -67,8 +64,6 @@ Add all below dependencies:
         classpath 'com.android.tools.build:gradle:3.1.4'
         classpath 'com.google.gms:google-services:4.0.0'
         classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
-        classpath 'io.fabric.tools:gradle:1.25.4'
-
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
