@@ -72,11 +72,9 @@ Add all below dependencies:
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-} 
-
-allprojects {
-
-    repositories {
+    }
+    allprojects {
+      repositories {
     
         maven {
             url 'https://maven.google.com/'
@@ -100,8 +98,47 @@ allprojects {
 
     }
     }
-
     
-    5. .
-    6. .
+    5. Change the below variables in config.java file:
+    
+        //This will be the default API calling url.
+    static final String API_DEFAULT_URL = "CHANNELIZE_API_DEFAULT_URL";
+
+    //This will be the mqtt client server url.
+    static final String MQTT_SERVER_URL = "CHANNELIZE_MQTT_SERVER_URL";
+
+    // This will be the api key.
+    static final String API_KEY = "CHANNELIZE_API_KEY";
+
+    // this will be sender id of the project
+    public static final String FIREBASE_SENDER_ID = "CHANNELIZE_FIREBASE_SENDER_ID";
+
+    // This will be the mobilesdk_app_id in google-services.json file
+    public static final String FIREBASE_APPLICATION_ID = "CHANNELIZE_FIREBASE_APPLICATION_ID";
+
+    // This will be the giphy api key.
+    static final String GIPHY_API_KEY = "CHANNELIZE_GIPHY_API_KEY";
+
+    // This will be the google places api key.
+    static final String GOOGLE_PLACES_API_KEY = "CHANNELIZE_GOOGLE_PLACES_API_KEY";
+
+    // This will be the aws api calling url.
+    static final String AWS_API_URL = "CHANNELIZE_AWS_API_URL";
+    
+    6. Channelize requires a few permissions. Head over to **AndroidManifest.xml** and add the following:
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    
     7. .
