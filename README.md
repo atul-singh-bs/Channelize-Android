@@ -12,9 +12,11 @@
  file.
  3. Add below code in app level build.gradle file:
 Add below code at top:
+
 apply plugin: 'com.jakewharton.butterknife'
 
 Add all below dependencies:
+
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation "com.android.support:support-v4:$supportLibraryVersion"
@@ -70,14 +72,17 @@ Add all below dependencies:
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-}
+} 
 
 allprojects {
+
     repositories {
+    
         maven {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        
         jcenter()
 
         flatDir {
@@ -95,6 +100,7 @@ allprojects {
 
     }
     }
+
     
     5. .
     6. .
