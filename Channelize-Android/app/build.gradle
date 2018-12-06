@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.channelize.android"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName '1.0'
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g" //specify the heap size for the dex process
+        preDexLibraries = false //delete the already predexed libraries
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+ext{
+    supportLibraryVersion = '28.0.0'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+
+
+    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+    implementation "com.android.support:design:$supportLibraryVersion"
+    implementation "com.android.support:support-v4:$supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$supportLibraryVersion"
+    implementation ('com.google.android.gms:play-services-places:15.0.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation ('com.google.firebase:firebase-messaging:17.1.0') {
+        exclude group: 'com.android.support'
+    }
+    implementation ('com.google.firebase:firebase-core:16.0.1') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.google.code.gson:gson:2.3'
+    implementation 'com.jakewharton:disklrucache:2.0.2'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.facebook.shimmer:shimmer:0.3.0@aar'
+    implementation "com.jakewharton:butterknife:9.0.0-SNAPSHOT"
+    annotationProcessor"com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT"
+    implementation('com.giphy.sdk:core:1.0.2@aar') {
+        transitive = true
+    }
+    implementation project(':channelize')
+}
+apply plugin: 'com.google.gms.google-services'
