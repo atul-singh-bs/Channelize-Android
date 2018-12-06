@@ -44,7 +44,8 @@ Add all below dependencies:
     implementation "com.jakewharton:butterknife:9.0.0-SNAPSHOT"
     annotationProcessor"com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT"
     
-    4. Add below code at project level build.gradle file:
+   4. Add below code at project level build.gradle file:
+    
     buildscript {
     repositories {
         maven {
@@ -94,9 +95,11 @@ Add all below dependencies:
     }
     }
     
-    5. Change the below variables in config.java file:
     
-        //This will be the default API calling url.
+   5. Change the below variables in config.java file:
+    
+    
+     //This will be the default API calling url.
     static final String API_DEFAULT_URL = "CHANNELIZE_API_DEFAULT_URL";
 
     //This will be the mqtt client server url.
@@ -120,7 +123,7 @@ Add all below dependencies:
     // This will be the aws api calling url.
     static final String AWS_API_URL = "CHANNELIZE_AWS_API_URL";
     
-    6. Channelize requires a few permissions. Head over to **AndroidManifest.xml** and add the following:
+   6. Channelize requires a few permissions. Head over to **AndroidManifest.xml** and add the following: 
     
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
